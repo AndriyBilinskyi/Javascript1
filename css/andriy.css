@@ -1,0 +1,23 @@
+.bg-style {
+    background-color: #1e8cb2;
+    color:#ff672c ;
+}
+
+.my-button {
+    color: #ff672c;
+    background-color: purple;width:5%; ; height:5% ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5%;
+}
+.button {
+    clor: #122;
+    background-color: gray;
+    top :0%;
+    left:0%;
+    width: 3%;
+    display: block;
+}
+
+
