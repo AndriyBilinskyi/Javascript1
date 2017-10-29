@@ -5,19 +5,22 @@
 
 .my-button {
     color: #ff672c;
-    background-color: purple;width:5%; ; height:5% ;
+    background-color: purple;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5%;
+    top: 500px;
+    left: 500px;
+    width: 50px;
+    height:50px;
 }
 .button {
     clor: #122;
     background-color: gray;
-    top :0%;
-    left:0%;
-    width: 3%;
+    top :0px;
+    left:0px;
+    width: 30px;
     display: block;
 }
+
+    
 
 

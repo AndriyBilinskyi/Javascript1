@@ -42,15 +42,19 @@ function createMultipleButtons() {
     e.innerHTML = h;
 }
 
+
+var buttons = [document.getElementById("theButton"), document.getElementById("secondButton")];
+_.each(buttons, function(e){jumpStep(e,10)});
+
 function jumpStep(button,startPositionTop,startPositionLeft, stepTop,stepLeft, timeInterval, timeStep){
     var newPositionTop = startPositionTop + stepTop;
     var newPositionLeft = startPositionLeft +stepLeft;
     var htmlElementOfTheButton = button;
     var newtimeInterval = timeInterval+timeStep;
-    htmlElementOfTheButton.style.top = newPositionTop +"%";
-    htmlElementOfTheButton.style.left =  newPositionLeft+"%";
-    var hitTopOrBottomSide =newPositionTop<0 || newPositionTop>=95;
-    var hitRightOrLeftSide = newPositionLeft<0||newPositionLeft>=95 ;
+    htmlElementOfTheButton.style.top = newPositionTop+"px" ;
+    htmlElementOfTheButton.style.left =  newPositionLeft+"px";
+    var hitTopOrBottomSide =newPositionTop<0 || newPositionTop>=1000;
+    var hitRightOrLeftSide = newPositionLeft<0||newPositionLeft>=1000 ;
     if (hitTopOrBottomSide){
         stepTop = -stepTop
     }
@@ -63,9 +67,7 @@ function jumpStep(button,startPositionTop,startPositionLeft, stepTop,stepLeft, t
     if (hitRightOrLeftSide){
         newtimeInterval=50
     }
-    if (newPositionTop<=3 && newPositionLeft<=3){
-        document.getElementById("button").style.display="none";
-    }
+
     //if (newPositionTop>0 && newPositionLeft<95 && newPositionLeft>0 && newPositionTop<95){
         setTimeout(
             function () {
@@ -81,20 +83,15 @@ function jumpStep(button,startPositionTop,startPositionLeft, stepTop,stepLeft, t
 
 function jump(button,secondButton/*thirdButton*/){
     button.onclick=undefined;
-    jumpStep(button, 50,50,-0.5,-0.5,50,0);
+    jumpStep(button, 500,500,-1,-1,10,0);
    var secondButton = document.getElementById(secondButton);
     secondButton.onclick=undefined;
-    /*jumpStep(secondButton,50,50,-5,-5,700,0.8);
-    var thirdButton = document.getElementById(thirdButton);
-   thirdButton.onclick=undefined;
-   jumpStep(thirdButton, 50, 50,5, -5, 400, 0.9);*/
 
-}
-
-function test(x){
-    var boolean = x===10;
-    if(boolean){
+   jumpStep(secondButton,50,50,-1,-1,700,0.8);
+    /*var thirdButton = document.getElementById(thirdButton);
+  thirdButton.onclick=undefined;
+  jumpStep(thirdButton, 50, 50,5, -5, 400, 0.9);*/
 
 
-    }
+
 }
